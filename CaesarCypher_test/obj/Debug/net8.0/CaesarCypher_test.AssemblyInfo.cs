@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CaesarCypher_test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4552f1773b0e1a6ec35be782fbf6b1b6173813af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+144a87fd18d85feba93574b4b0318dbe47a2fd15")]
 [assembly: System.Reflection.AssemblyProductAttribute("CaesarCypher_test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CaesarCypher_test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
