@@ -1,8 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=73aba98c_002D9df9_002D452a_002Dbba9_002D77888d20a820/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="EncryptWord_Word_CorrectEncryption" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::5AABD316-3BB6-5F9E-F6FC-F5B55EF34B9B::net8.0::CaesarCypher_test.CaesarCypher_test.EncryptWord_Word_CorrectEncryption&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5AABD316-3BB6-5F9E-F6FC-F5B55EF34B9B::net8.0::CaesarCypher_test.CaesarCypher_test.EncryptWord_Word_IncorrectEncryption&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5AABD316-3BB6-5F9E-F6FC-F5B55EF34B9B::net8.0::CaesarCypher_test.CaesarCypher_test.DecryptWord_EncryptedWord_CorrectDecryption&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

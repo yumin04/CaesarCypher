@@ -28,7 +28,7 @@ public class CaesarCypher_test
     //
     //     
     //     //act
-    //     string encryptedWord = CaesarCypher.Encode(words, shift);
+    //     string encryptedWord = CaesarCypher_test.Encode(words, shift);
     //     
     //     //assert
     //     Assert.NotEqual(expectedWord, encryptedWord);
@@ -55,7 +55,7 @@ public class CaesarCypher_test
     // public void DecryptWord_EncryptedWord_IncorrectDecryption(string words, int shift, string expectedWord)
     // {
     //     //act
-    //     string encryptedWord = CaesarCypher.Encode(words, shift);
+    //     string encryptedWord = CaesarCypher_test.Encode(words, shift);
     //     
     //     //assert
     //     Assert.Equal(expectedWord, encryptedWord);

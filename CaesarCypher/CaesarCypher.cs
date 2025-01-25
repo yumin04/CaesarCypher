@@ -36,18 +36,33 @@ public static class CaesarCypher
             return " ";
         }
         currentChar += (char)shift;
-        currentChar = CheckForCharacterBound(currentChar);
+        bool isEncode = shift > 0;
+        currentChar = CheckForCharacterBound(currentChar, isEncode);
         return currentChar.ToString();
     }
 
-    private static char CheckForCharacterBound(char currentChar)
+    private static char CheckForCharacterBound(char currentChar, bool isEncode)
     {
-        if (currentChar < 'A')
+        if (isEncode)
+        {
+            if (char.ToUpper(currentChar) < 'A')
+            {
+                currentChar += (char)26;
+                return currentChar;
+            }
+            if (char.ToUpper(currentChar) > 'Z')
+            {
+                currentChar -= (char)26;
+                return currentChar;
+            }
+return currentChar;
+        }
+        if (char.ToLower(currentChar) < 'a')
         {
             currentChar += (char)26;
             return currentChar;
         }
-        if (currentChar > 'z')
+        if (char.ToLower(currentChar) > 'z')
         {
             currentChar -= (char)26;
             return currentChar;
