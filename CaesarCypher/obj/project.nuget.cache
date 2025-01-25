@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eLs+aQwDU7I=",
+  "dgSpecHash": "hLmUdJnFHTQ=",
   "success": true,
-  "projectFilePath": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher/CaesarCypher.csproj",
-  "expectedPackageFiles": [
-    "/Users/tsivkovski/.nuget/packages/microsoft.netcore.app.ref/8.0.11/microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
-    "/Users/tsivkovski/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
-    "/Users/tsivkovski/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.11/microsoft.netcore.app.host.osx-arm64.8.0.11.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher\\CaesarCypher.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/tsivkovski/.nuget/packages/": {}
+    "C:\\Users\\myh04\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher/CaesarCypher.csproj",
+      "projectUniqueName": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher\\CaesarCypher.csproj",
       "projectName": "CaesarCypher",
-      "projectPath": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher/CaesarCypher.csproj",
-      "packagesPath": "/Users/tsivkovski/.nuget/packages/",
-      "outputPath": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher/obj/",
+      "projectPath": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher\\CaesarCypher.csproj",
+      "packagesPath": "C:\\Users\\myh04\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tsivkovski/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\myh04\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -43,8 +43,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -60,26 +59,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

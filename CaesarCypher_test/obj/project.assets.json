@@ -5524,19 +5524,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/tsivkovski/.nuget/packages/": {}
+    "C:\\Users\\myh04\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher_test/CaesarCypher_test.csproj",
+      "projectUniqueName": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher_test\\CaesarCypher_test.csproj",
       "projectName": "CaesarCypher_test",
-      "projectPath": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher_test/CaesarCypher_test.csproj",
-      "packagesPath": "/Users/tsivkovski/.nuget/packages/",
-      "outputPath": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher_test/obj/",
+      "projectPath": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher_test\\CaesarCypher_test.csproj",
+      "packagesPath": "C:\\Users\\myh04\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher_test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tsivkovski/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\myh04\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5548,8 +5548,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher/CaesarCypher.csproj": {
-              "projectPath": "/Users/tsivkovski/RiderProjects/CaesarCypher/CaesarCypher/CaesarCypher.csproj"
+            "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher\\CaesarCypher.csproj": {
+              "projectPath": "C:\\Users\\myh04\\OneDrive\\Documents\\Coding\\CPSC\\SE370\\CaesarCypher\\CaesarCypher\\CaesarCypher.csproj"
             }
           }
         }
@@ -5563,8 +5563,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -5598,22 +5597,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
