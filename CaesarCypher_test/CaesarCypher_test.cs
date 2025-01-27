@@ -87,7 +87,8 @@ public class CaesarCypher_test
     [InlineData("HELLO", -1, "GDKKN")]
     [InlineData("HELLO", 0, "HELLO")]
     [InlineData("HELLO", null, "INVALID SHIFT VALUE")]
-    public void EncryptWord_Shift_NonPositiveIntegerShift(string? words, int? shift, string expectedWords)
+    [InlineData("HELLO", -53, "GDKKN")]
+    public void EncryptWord_Shift_NonPositiveOrLargeIntegerShift(string? words, int? shift, string expectedWords)
     {
         string? encryptedWord = CaesarCypher.Encode(words, shift);
         
@@ -99,7 +100,8 @@ public class CaesarCypher_test
     [InlineData("GDKKN", -1, "HELLO")]
     [InlineData("HELLO", 0, "HELLO")]
     [InlineData("HELLO", null, "INVALID SHIFT VALUE")]
-    public void DecryptWord_Shift_NonPositiveIntegerShift(string? words, int? shift, string expectedWords)
+    [InlineData("GDKKN", -53, "HELLO")]
+    public void DecryptWord_Shift_NonPositiveOrLargeIntegerShift(string? words, int? shift, string expectedWords)
     {
         string? decryptedWord = CaesarCypher.Decode(words, shift);
         

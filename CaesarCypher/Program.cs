@@ -7,7 +7,7 @@ class Program
         while (true)  
         {  
             Console.Write("Enter a string to encode (or type 'quit' to exit): "); 
-            string input = Console.ReadLine();  
+            string? input = Console.ReadLine();  
   
             if (input.Equals("quit", StringComparison.OrdinalIgnoreCase))  
             {  
@@ -28,9 +28,9 @@ class Program
             }
             
             // Somehow it says "cannot resolve symbol Encode"
-            string encoded = Encode(input, shift); 
+            string? encoded = Encode(input, shift); 
             Console.WriteLine($"Encoded string: {encoded}");  
-            string decoded = Decode(encoded, shift);  
+            string? decoded = Decode(encoded, shift);  
             Console.WriteLine($"Decoded string: {decoded}");  
         }  
     }  
