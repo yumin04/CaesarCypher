@@ -55,7 +55,7 @@ public static class CaesarCypher
                 currentChar -= (char)26;
                 return currentChar;
             }
-return currentChar;
+            return currentChar;
         }
         if (char.ToLower(currentChar) < 'a')
         {
