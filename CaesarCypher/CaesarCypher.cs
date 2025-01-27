@@ -4,32 +4,40 @@ public static class CaesarCypher
 {
     private static string? caesarMessage;
 
-    public static string? Encode(string? message, int shift)
+    public static string? Encode(string? message, int? shift)
     {
         if (message == null)
         {
             return "INVALID INPUT";
         }
+        if (shift == null)
+        {
+            return "INVALID SHIFT VALUE";
+        }
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
             char currentChar = message[i];
-            caesarMessage += ChangeCurrentCharacter(currentChar, shift);
+            caesarMessage += ChangeCurrentCharacter(currentChar, (int)shift);
         }
         return caesarMessage;
     }
 
-    public static string? Decode(string? message, int shift)
+    public static string? Decode(string? message, int? shift)
     {
         if (message == null)
         {
             return "INVALID INPUT";
         }
+        if (shift == null)
+        {
+            return "INVALID SHIFT VALUE";
+        }
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
             char currentChar = message[i];
-            caesarMessage += ChangeCurrentCharacter(currentChar, -1 * shift);
+            caesarMessage += ChangeCurrentCharacter(currentChar, -1 * (int)shift);
         }
         return caesarMessage;
     }
