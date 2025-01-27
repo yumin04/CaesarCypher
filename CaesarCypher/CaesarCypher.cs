@@ -14,6 +14,9 @@ public static class CaesarCypher
         {
             return "INVALID SHIFT VALUE";
         }
+        
+        shift %= 26; // shift accounts for large numbers
+        
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
@@ -33,6 +36,9 @@ public static class CaesarCypher
         {
             return "INVALID SHIFT VALUE";
         }
+        
+        shift %= 26; // shift accounts for large numbers
+        
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
