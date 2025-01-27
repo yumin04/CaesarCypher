@@ -2,10 +2,14 @@ namespace CaesarCypher;
 
 public static class CaesarCypher
 {
-    private static string caesarMessage;
+    private static string? caesarMessage;
 
-    public static string Encode(string message, int shift)
+    public static string? Encode(string? message, int shift)
     {
+        if (message == null)
+        {
+            return "INVALID INPUT";
+        }
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
@@ -15,8 +19,12 @@ public static class CaesarCypher
         return caesarMessage;
     }
 
-    public static string Decode(string message, int shift)
+    public static string? Decode(string? message, int shift)
     {
+        if (message == null)
+        {
+            return "INVALID INPUT";
+        }
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
@@ -29,7 +37,7 @@ public static class CaesarCypher
     {
         caesarMessage = "";
     }
-    private static string ChangeCurrentCharacter(char currentChar, int shift)
+    private static string? ChangeCurrentCharacter(char currentChar, int shift)
     {
         if (CheckForEmptyCharacter(currentChar))
         {
