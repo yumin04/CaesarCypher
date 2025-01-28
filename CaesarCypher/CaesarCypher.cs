@@ -142,34 +142,4 @@ public static class CaesarCypher
         }
         return false;
     }
-
-    private static double ScoreText(string text, Dictionary<char, double> englishFreq)
-    {
-        // Count letter frequencies in the text
-        Dictionary<char, int> letterCount = new Dictionary<char, int>();
-        int totalLetters = 0;
-
-        foreach (char c in text)
-        {
-            if (char.IsLetter(c))
-            {
-                char upper = char.ToUpper(c);
-                letterCount[upper] = letterCount.GetValueOrDefault(upper, 0) + 1;
-                totalLetters++;
-            }
-        }
-
-        // Calculate score based on frequency difference
-        double score = 0;
-        if (totalLetters == 0) return score;
-
-        foreach (var kvp in englishFreq)
-        {
-            double expectedFreq = kvp.Value;
-            double actualFreq = (letterCount.GetValueOrDefault(kvp.Key, 0) * 100.0) / totalLetters;
-            score -= Math.Abs(expectedFreq - actualFreq);
-        }
-
-        return score;
-    }
 }
