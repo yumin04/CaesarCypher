@@ -109,5 +109,18 @@ public class CaesarCypher_test
         Assert.Equal(expectedWords, decryptedWord);
     }
     
+    [Theory]
+    [InlineData(
+        "P ht h nhtl klclsvwly, wyvnyhttly, huk zabklua whzzpvuhal hivba ibpskpun zjhshisl, jylhapcl, huk puuvchapcl hwwspjhapvuz. Dpao puapthal ruvdslknl pu mbss-zahjr zvmadhyl klclsvwtlua, wyvqlja thuhnltlua, huk nhtl klzpnu P ibpsk zfzaltz aoha thrl h bzly zll aol dvysk pu h uld dhf.",
+        "I am a game developer, programmer, and student passionate about building scalable, creative, and innovative applications. With intimate knowledge in full-stack software development, project management, and game design I build systems that make a user see the world in a new way.")]
+    public void CrackCypher_UnknownShift_CorrectDecryption(string cypher, string expectedDecryption)
+    {
+        // act
+        string decryptedText = CaesarCypher.Crack(cypher);
+        
+        Assert.Equal(expectedDecryption, decryptedText);
+
+    }
+    
     
 }

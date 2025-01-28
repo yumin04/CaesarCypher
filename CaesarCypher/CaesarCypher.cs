@@ -1,4 +1,6 @@
 namespace CaesarCypher;
+using System;
+using System.Collections.Generic;
 
 public static class CaesarCypher
 {
@@ -47,50 +49,85 @@ public static class CaesarCypher
         }
         return caesarMessage;
     }
+
+    public static string Crack(string encodedMessage)
+    {
+        if (string.IsNullOrEmpty(encodedMessage))
+        {
+            return "INVALID INPUT";
+        }
+
+        // Dictionary of English letter frequencies (as percentages)
+        Dictionary<char, double> englishFreq = new Dictionary<char, double>
+        {
+            {'E', 12.70}, {'T', 9.06}, {'A', 8.17}, {'O', 7.51}, {'I', 6.97},
+            {'N', 6.75}, {'S', 6.33}, {'H', 6.09}, {'R', 5.99}, {'D', 4.25},
+            {'L', 4.03}, {'C', 2.78}, {'U', 2.76}, {'M', 2.41}, {'W', 2.36},
+            {'F', 2.23}, {'G', 2.02}, {'Y', 1.97}, {'P', 1.93}, {'B', 1.49},
+            {'V', 0.98}, {'K', 0.77}, {'X', 0.15}, {'J', 0.15}, {'Q', 0.10},
+            {'Z', 0.07}
+        };
+
+        double bestScore = double.MinValue;
+        string bestMessage = "";
+
+        // Try all possible shifts
+        for (int shift = 0; shift < 26; shift++)
+        {
+            string decoded = Decode(encodedMessage, shift) ?? "";
+            double score = ScoreText(decoded.ToUpper(), englishFreq);
+            
+            if (score > bestScore)
+            {
+                bestScore = score;
+                bestMessage = decoded;
+            }
+        }
+
+        return bestMessage;
+    }
+
     private static void ResetCaesarMessage()
     {
         caesarMessage = "";
     }
+
     private static string? ChangeCurrentCharacter(char currentChar, int shift)
     {
+        bool isUpper = false;
         if (CheckForEmptyCharacter(currentChar))
         {
             return " ";
+        } 
+        if (!char.IsLetter(currentChar))
+        {
+            return currentChar.ToString();
         }
-        currentChar += (char)shift;
-        bool isEncode = shift > 0;
-        currentChar = CheckForCharacterBound(currentChar, isEncode);
+        if (char.IsUpper(currentChar))
+        {
+            isUpper = true;
+        }
+        if (shift != 0)
+        {
+            currentChar = CheckForCharacterBound(currentChar, shift, isUpper);
+        }
         return currentChar.ToString();
     }
 
-    private static char CheckForCharacterBound(char currentChar, bool isEncode)
+    private static char CheckForCharacterBound(char currentChar, int shift, bool isUpper)
     {
-        if (isEncode)
+        char offset = isUpper ? 'A' : 'a';
+    
+        int alphaIndex = currentChar - offset;
+    
+        alphaIndex = (alphaIndex + shift) % 26;
+    
+        if (alphaIndex < 0)
         {
-            if (char.ToUpper(currentChar) < 'A')
-            {
-                currentChar += (char)26;
-                return currentChar;
-            }
-            if (char.ToUpper(currentChar) > 'Z')
-            {
-                currentChar -= (char)26;
-                return currentChar;
-            }
-            return currentChar;
-        }
-        if (char.ToLower(currentChar) < 'a')
-        {
-            currentChar += (char)26;
-            return currentChar;
-        }
-        if (char.ToLower(currentChar) > 'z')
-        {
-            currentChar -= (char)26;
-            return currentChar;
+            alphaIndex += 26;
         }
 
-        return currentChar;
+        return (char)(offset + alphaIndex);
     }
 
     private static bool CheckForEmptyCharacter(char currentChar)
@@ -100,5 +137,35 @@ public static class CaesarCypher
             return true;
         }
         return false;
+    }
+
+    private static double ScoreText(string text, Dictionary<char, double> englishFreq)
+    {
+        // Count letter frequencies in the text
+        Dictionary<char, int> letterCount = new Dictionary<char, int>();
+        int totalLetters = 0;
+
+        foreach (char c in text)
+        {
+            if (char.IsLetter(c))
+            {
+                char upper = char.ToUpper(c);
+                letterCount[upper] = letterCount.GetValueOrDefault(upper, 0) + 1;
+                totalLetters++;
+            }
+        }
+
+        // Calculate score based on frequency difference
+        double score = 0;
+        if (totalLetters == 0) return score;
+
+        foreach (var kvp in englishFreq)
+        {
+            double expectedFreq = kvp.Value;
+            double actualFreq = (letterCount.GetValueOrDefault(kvp.Key, 0) * 100.0) / totalLetters;
+            score -= Math.Abs(expectedFreq - actualFreq);
+        }
+
+        return score;
     }
 }
