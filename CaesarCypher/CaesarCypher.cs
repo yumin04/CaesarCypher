@@ -97,6 +97,10 @@ public static class CaesarCypher
         if (CheckForEmptyCharacter(currentChar))
         {
             return " ";
+        } 
+        if (!char.IsLetter(currentChar))
+        {
+            return currentChar.ToString();
         }
         currentChar += (char)shift;
         bool isEncode = shift > 0;
