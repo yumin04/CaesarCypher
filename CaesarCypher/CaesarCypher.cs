@@ -94,6 +94,7 @@ public static class CaesarCypher
 
     private static string? ChangeCurrentCharacter(char currentChar, int shift)
     {
+        bool isUpper = false;
         if (CheckForEmptyCharacter(currentChar))
         {
             return " ";
@@ -102,40 +103,31 @@ public static class CaesarCypher
         {
             return currentChar.ToString();
         }
-        currentChar += (char)shift;
-        bool isEncode = shift > 0;
-        currentChar = CheckForCharacterBound(currentChar, isEncode);
+        if (char.IsUpper(currentChar))
+        {
+            isUpper = true;
+        }
+        if (shift != 0)
+        {
+            currentChar = CheckForCharacterBound(currentChar, shift, isUpper);
+        }
         return currentChar.ToString();
     }
 
-    private static char CheckForCharacterBound(char currentChar, bool isEncode)
+    private static char CheckForCharacterBound(char currentChar, int shift, bool isUpper)
     {
-        if (isEncode)
+        char offset = isUpper ? 'A' : 'a';
+    
+        int alphaIndex = currentChar - offset;
+    
+        alphaIndex = (alphaIndex + shift) % 26;
+    
+        if (alphaIndex < 0)
         {
-            if (char.ToUpper(currentChar) < 'A')
-            {
-                currentChar += (char)26;
-                return currentChar;
-            }
-            if (char.ToUpper(currentChar) > 'Z')
-            {
-                currentChar -= (char)26;
-                return currentChar;
-            }
-            return currentChar;
-        }
-        if (char.ToLower(currentChar) < 'a')
-        {
-            currentChar += (char)26;
-            return currentChar;
-        }
-        if (char.ToLower(currentChar) > 'z')
-        {
-            currentChar -= (char)26;
-            return currentChar;
+            alphaIndex += 26;
         }
 
-        return currentChar;
+        return (char)(offset + alphaIndex);
     }
 
     private static bool CheckForEmptyCharacter(char currentChar)
