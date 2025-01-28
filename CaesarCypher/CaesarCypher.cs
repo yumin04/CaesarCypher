@@ -2,26 +2,48 @@ namespace CaesarCypher;
 
 public static class CaesarCypher
 {
-    private static string caesarMessage;
+    private static string? caesarMessage;
 
-    public static string Encode(string message, int shift)
+    public static string? Encode(string? message, int? shift)
     {
+        if (message == null)
+        {
+            return "INVALID INPUT";
+        }
+        if (shift == null)
+        {
+            return "INVALID SHIFT VALUE";
+        }
+        
+        shift %= 26; // shift accounts for large numbers
+        
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
             char currentChar = message[i];
-            caesarMessage += ChangeCurrentCharacter(currentChar, shift);
+            caesarMessage += ChangeCurrentCharacter(currentChar, (int)shift);
         }
         return caesarMessage;
     }
 
-    public static string Decode(string message, int shift)
+    public static string? Decode(string? message, int? shift)
     {
+        if (message == null)
+        {
+            return "INVALID INPUT";
+        }
+        if (shift == null)
+        {
+            return "INVALID SHIFT VALUE";
+        }
+        
+        shift %= 26; // shift accounts for large numbers
+        
         ResetCaesarMessage();
         for (int i = 0; i < message.Length; i++)
         {
             char currentChar = message[i];
-            caesarMessage += ChangeCurrentCharacter(currentChar, -1 * shift);
+            caesarMessage += ChangeCurrentCharacter(currentChar, -1 * (int)shift);
         }
         return caesarMessage;
     }
@@ -29,7 +51,7 @@ public static class CaesarCypher
     {
         caesarMessage = "";
     }
-    private static string ChangeCurrentCharacter(char currentChar, int shift)
+    private static string? ChangeCurrentCharacter(char currentChar, int shift)
     {
         if (CheckForEmptyCharacter(currentChar))
         {
@@ -55,7 +77,7 @@ public static class CaesarCypher
                 currentChar -= (char)26;
                 return currentChar;
             }
-return currentChar;
+            return currentChar;
         }
         if (char.ToLower(currentChar) < 'a')
         {
